@@ -1,18 +1,18 @@
 #include <iostream>
 using namespace std;
 
-void square(int *val)
+void square(int *pam)
 {
-    *val = *(val) * *(val);
+    *pam = *pam * *pam;
 }
-int sq(int *val)
+int sq(int *pam)
 {
-    return *val = *(val) * *(val);
+    return *pam = *pam * *pam;
 }
-int s(int &val)
+int s(int &pam)
 {
-    // int sv = val * val; // only reads the value and returns the read value. Does not change the actual value.
-    return val = val * val;
+    // int sv = pam * pam; // only reads the value and returns the read value. Does not change the actual value.
+    return pam = pam * pam;
 }
 
 void foo(int *p)
