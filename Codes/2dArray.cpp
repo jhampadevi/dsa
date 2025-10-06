@@ -119,11 +119,11 @@ int main()
     */
 
     rowSum(arr, ROW, COL);
-    
+
     // Find the row with largest sum
     int rowWithLargestSum = largestRow(arr, ROW, COL);
     cout << "Row with largest sum: " << rowWithLargestSum << endl;
-    
+
     // cout << INT_MIN << endl;
     // cout << INT_MAX << endl;
 }
