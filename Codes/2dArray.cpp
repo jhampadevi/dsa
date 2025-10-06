@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits>
 using namespace std;
 
 const int ROW = 3;
@@ -24,7 +25,21 @@ bool isPresent(int arr[][COL], int target, int ROW, int COL)
 // Row-wise sum
 int rowSum(int arr[][COL], int ROW, int COL)
 {
+    for (int row = 0; row < ROW; row++)
+    {
+        int sum = 0;
+        for (int col = 0; col < COL; col++)
+        {
+            sum += arr[row][col];
+        }
+        cout << "Sum of row " << row << ": " << sum << endl;
+    }
+}
 
+int largestRow(int arr[][COL], int ROW, int COL)
+{
+    int largest = INT_MIN;
+    int row = -1;
     for (int i = 0; i < ROW; i++)
     {
         int sum = 0;
@@ -32,9 +47,13 @@ int rowSum(int arr[][COL], int ROW, int COL)
         {
             sum += arr[i][j];
         }
-        cout << "Sum of row " << i << ": " << sum << endl;
+        if (sum > largest)
+        {
+            largest = sum;
+            row = i;
+        }
     }
-    return 0;
+    return row;
 }
 
 int arr[ROW][COL] = {
@@ -100,4 +119,11 @@ int main()
     */
 
     rowSum(arr, ROW, COL);
+    
+    // Find the row with largest sum
+    int rowWithLargestSum = largestRow(arr, ROW, COL);
+    cout << "Row with largest sum: " << rowWithLargestSum << endl;
+    
+    // cout << INT_MIN << endl;
+    // cout << INT_MAX << endl;
 }
